@@ -1,6 +1,6 @@
 # WP Theme with React
 
-A proof of concept using `@wordpress/scripts` to import NPM packages and create simple React components throughout a theme. Thanks to `@wordpress/scripts` v12, both Sass and importing the of NPM packages is now supported.
+A proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to import NPM packages and create simple React components throughout a theme. Thanks to @wordpress/scripts v12, both Sass and importing the of NPM packages is now supported.
 
 ## Demo
 
@@ -65,7 +65,7 @@ ReactDOM.render(
 );
 ```
 
-This will tell `@wordpress/scripts` to bundle everything up!
+This will tell @wordpress/scripts to bundle everything up!
 
 ![screenshot](https://dl.dropbox.com/s/jseox2sxbk84fko/Screenshot%202020-07-15%2014.57.27.png?dl=0)
 

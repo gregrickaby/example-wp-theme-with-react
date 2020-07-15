@@ -14,8 +14,6 @@
 			<footer id="site-footer" role="contentinfo" class="header-footer-group">
 				<p>&copy; <?php echo esc_html( date( 'Y' ) ); ?> WP Theme with React</p>
 			</footer><!-- #site-footer -->
-
 		<?php wp_footer(); ?>
-
 	</body>
 </html>

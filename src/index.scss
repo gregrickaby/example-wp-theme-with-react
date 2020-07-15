@@ -1,0 +1,17 @@
+/* Header styles */
+.header {
+	display: flex;
+	align-items: center;
+
+	.logo {
+		float: left;
+		margin-right: 24px;
+	}
+}
+
+/* SOME BASIC STYLES. DELETE ME */
+#site-header,
+#site-content,
+#site-footer {
+	margin-bottom: 24px;
+}

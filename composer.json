@@ -1,0 +1,23 @@
+{
+  "name": "gregrickaby/wp-theme-with-react",
+  "description": "A WordPress theme with React and @wordpress/scripts.",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Greg Rickaby",
+      "email": "greg@gregrickaby.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "webdevstudios/php-coding-standards": "^1.0"
+  },
+  "scripts": {
+    "format": "./vendor/bin/phpcbf -p -v . --standard=.phpcs.xml.dist --extensions=php --report-summary --report-source --ignore='*/node_modules/*,*/vendor/*,*/dist/*'",
+    "lint": "./vendor/bin/phpcs -p -s -n . --standard=.phpcs.xml.dist --extensions=php -n --colors --ignore='*/node_modules/*,*/vendor/*,*/dist/*'"
+  }
+}

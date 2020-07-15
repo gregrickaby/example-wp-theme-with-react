@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'react-cool-img';
 
-export default function Logo() {
+export default function Header() {
 	return (
 		<div className="header">
 			<Img
@@ -9,8 +9,11 @@ export default function Logo() {
 				alt="Logo"
 				className="logo"
 			/>
-			<h1>Site Name</h1>
-			<p>Site Description</p>
+
+			<div className="branding">
+				<h1>Site Name</h1>
+				<p>Site Description</p>
+			</div>
 		</div>
 	);
 }

@@ -1,17 +1,25 @@
 /* Header styles */
 .header {
 	display: flex;
-	align-items: center;
 
 	.logo {
-		float: left;
 		margin-right: 24px;
+	}
+
+	.branding {
+		display: flex;
+		flex-direction: column;
 	}
 }
 
-/* SOME BASIC STYLES. DELETE ME */
+/* SOME BASIC STYLES FOR DEMO PURPOSES. DELETE ME */
 #site-header,
 #site-content,
 #site-footer {
 	margin-bottom: 24px;
+
+	h1 {
+		margin: 0;
+		padding: 0;
+	}
 }

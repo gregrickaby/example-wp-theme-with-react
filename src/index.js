@@ -1,9 +1,9 @@
 import './index.scss';
-import Logo from './components/Logo';
+import Header from './components/Header';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Logo />
+		<Header />
 	</React.StrictMode>,
 	document.getElementById( 'site-header' )
 );

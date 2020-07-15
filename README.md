@@ -4,7 +4,7 @@ A proof of concept using [@wordpress/scripts](https://developer.wordpress.org/bl
 
 ## Demo
 
-Let's build a header area using React and the NPM package [React Cool Img](https://github.com/wellyshen/react-cool-img) (to lazy load our logo) for an example:
+Let's build a header area using React and the NPM package [React Cool Img](https://github.com/wellyshen/react-cool-img) as a demo:
 
 ```js
 /* src/components/Header.js */
@@ -30,7 +30,7 @@ export default function Header() {
 }
 ```
 
-Now create some styles in `index.scss`:
+Create some styles in `index.scss`:
 
 ```scss
 /* src/index.scss */
@@ -49,7 +49,7 @@ Now create some styles in `index.scss`:
 }
 ```
 
-Then import the Sass file, and the `<Header />` component into the entry file `index.js`. We also need attach the `<Header />` to `#site-header` using `ReactDom.render()`:
+Import the Sass file, and the `<Header />` component into the entry file `index.js`. We also need attach the `<Header />` to `#site-header` using `ReactDom.render()`:
 
 ```js
 /* src/index.js */
@@ -65,13 +65,19 @@ ReactDOM.render(
 );
 ```
 
-This will tell @wordpress/scripts to bundle everything up!
+Now tell @wordpress/scripts to bundle everything up!
+
+```bash
+npm run build
+```
+
+The finished header 👇 💥
 
 ![screenshot](https://dl.dropbox.com/s/jseox2sxbk84fko/Screenshot%202020-07-15%2014.57.27.png?dl=0)
 
 ### How does this work?
 
-In `functions.php` [we're enqueueing](https://github.com/gregrickaby/wp-theme-with-react/blob/master/functions.php#L23) `/build/index.js` and requireing `wp-element` as a depdendency, which includes both React and ReactDom.
+In `functions.php` [we're enqueueing](https://github.com/gregrickaby/wp-theme-with-react/blob/master/functions.php#L23) `/build/index.js` and requiring `wp-element` as a depdendency, which includes both React and ReactDom.
 
 ## Try out this demo
 

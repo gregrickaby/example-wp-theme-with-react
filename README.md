@@ -6,7 +6,20 @@ This repo is a proof of concept using [@wordpress/scripts](https://developer.wor
 
 ## Demo
 
-Let's build a header area using JSX and the NPM package [React Cool Img](https://github.com/wellyshen/react-cool-img):
+First, we need to enqueue React, ReactDom, and our CSS in `functions.php`:
+
+```php
+/* functions.php */
+
+function example_scripts() {
+	wp_enqueue_style( 'example-theme-style', get_stylesheet_directory_uri() . '/build/index.css', [], wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_script( 'example-theme-script', get_stylesheet_directory_uri() . '/build/index.js', [ 'wp-element' ], wp_get_theme()->get( 'Version' ), true );
+	wp_script_add_data( 'example-theme-script', 'async', true );
+}
+add_action( 'wp_enqueue_scripts', 'example_scripts' );
+```
+
+Now we can build a header area using JSX and use the NPM package [React Cool Img](https://github.com/wellyshen/react-cool-img) to load in our logo. _Note: React Cool Img is not required, but I wanted to show you how can use ES6 imports to bring in other packages_
 
 ```js
 /* src/components/Header.js */
@@ -77,9 +90,9 @@ The finished header 👇 💥
 
 ![screenshot](https://dl.dropbox.com/s/jseox2sxbk84fko/Screenshot%202020-07-15%2014.57.27.png?dl=0)
 
-### How does this work?
+### What just happened?
 
-In `functions.php` [we're enqueueing](https://github.com/gregrickaby/wp-theme-with-react/blob/master/functions.php#L23) `/build/index.js` and requiring `wp-element` as a depdendency, which includes both React and ReactDom.
+In `functions.php` [we're enqueueing](https://github.com/gregrickaby/wp-theme-with-react/blob/master/functions.php) our bundled JavaScript and CSS file and requiring `wp-element` as a depdendency, which includes both React and ReactDom. These files will be loaded on the front-end!
 
 ## Try out this demo
 

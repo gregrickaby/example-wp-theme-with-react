@@ -2,7 +2,7 @@
 
 Have you ever wanted to use a traditional WordPress theme, but add dynamic user interfaces to the front-end? Maybe there's an NPM package that you want to use, but you're not sure how to import and bundle it?
 
-This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to import NPM packages and create simple React components throughout a theme. As of @wordpress/scripts v12, both Sass and importing NPM packages is supported.
+This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to import NPM packages and create simple React components throughout a traditional theme.
 
 ## Demo
 
@@ -51,7 +51,7 @@ Create some styles in `index.scss`:
 }
 ```
 
-Import the Sass file, and the `<Header />` component into the entry file `index.js`. We also need attach the `<Header />` to `#site-header` using `ReactDom.render()`:
+Import both the Sass file and `<Header />` component into the entry file `index.js`. We also need attach the `<Header />` to `#site-header` using `ReactDom.render()`:
 
 ```js
 /* src/index.js */

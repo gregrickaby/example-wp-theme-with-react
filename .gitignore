@@ -40,7 +40,7 @@ yarn-error.log*
 lerna-debug.log*
 
 ### Composer ###
-themes/**/vendor/
+/vendor/
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -158,10 +158,8 @@ $RECYCLE.BIN/
 *.lnk
 
 ### WordPress ###
-/uploads
-/upgrade
-/infinitewp
-/wp-rocket-config
+uploads
+upgrade
 advanced-cache.php
 wp-cache-config.php
 

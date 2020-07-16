@@ -1,10 +1,12 @@
-# WP Theme with React (Example)
+# Example WP Theme with React (Example)
 
-A proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to import NPM packages and create simple React components throughout a theme. As of @wordpress/scripts v12, both Sass and importing NPM packages is supported.
+Have you ever wanted to use a traditional WordPress theme, but add dynamic user interfaces to the front-end? Maybe there's an NPM package that you want to use, but you're not sure how to import and bundle it?
+
+This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to import NPM packages and create simple React components throughout a theme. As of @wordpress/scripts v12, both Sass and importing NPM packages is supported.
 
 ## Demo
 
-Let's build a header area using React and the NPM package [React Cool Img](https://github.com/wellyshen/react-cool-img) as a demo:
+Let's build a header area using React and the NPM package [React Cool Img](https://github.com/wellyshen/react-cool-img):
 
 ```js
 /* src/components/Header.js */

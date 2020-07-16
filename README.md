@@ -2,7 +2,7 @@
 
 Have you ever wanted to use a traditional WordPress theme, but add dynamic user interfaces to the front-end? Maybe there's an NPM package that you want to use, but you're not sure how to import and bundle it?
 
-This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to import NPM packages and create simple React components throughout a traditional theme.
+This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to import NPM packages and create simple React components throughout a traditional theme. Kind of like using jQuery!
 
 ## Demo
 

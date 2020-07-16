@@ -6,7 +6,7 @@ This repo is a proof of concept using [@wordpress/scripts](https://developer.wor
 
 ## Demo
 
-Let's build a header area using React and the NPM package [React Cool Img](https://github.com/wellyshen/react-cool-img):
+Let's build a header area using JSX and the NPM package [React Cool Img](https://github.com/wellyshen/react-cool-img):
 
 ```js
 /* src/components/Header.js */

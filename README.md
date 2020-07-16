@@ -32,7 +32,7 @@ export default function Header() {
 }
 ```
 
-Create some styles in `index.scss`:
+Style the `<Header />` component using Sass in `index.scss`:
 
 ```scss
 /* src/index.scss */
@@ -51,7 +51,7 @@ Create some styles in `index.scss`:
 }
 ```
 
-Import both the Sass file and `<Header />` component into the entry file `index.js`. We also need attach the `<Header />` to `#site-header` using `ReactDom.render()`:
+Import both the Sass file and `<Header />` component into the entry file `index.js`. The entry file is what @wordpress/scripts needs in order to bundle. We also need attach the `<Header />` component to `#site-header` div using `ReactDom.render()`:
 
 ```js
 /* src/index.js */
@@ -86,11 +86,11 @@ In `functions.php` [we're enqueueing](https://github.com/gregrickaby/wp-theme-wi
 Clone down the repo into `wp-content/themes` and install the dependencies:
 
 ```bash
-git@github.com:gregrickaby/wp-theme-with-react.git
+git@github.com:gregrickaby/example-wp-theme-with-react.git
 ```
 
 ```bash
-cd themes/wp-theme-with-react
+cd themes/example-wp-theme-with-react
 ```
 
 ```bash

@@ -2,7 +2,7 @@
 
 Have you ever wanted to use a traditional WordPress theme, but add dynamic user interfaces to the front-end? Maybe there's an NPM package that you want to use, but you're not sure how to import and bundle it?
 
-This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to bundle theme assets, use [TailwindCSS](https://tailwindcss.com/) for styles, and load the current weather conditions from the DarkSky API in the theme header.
+This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to bundle theme assets, use [TailwindCSS](https://tailwindcss.com/) for styles, and load the current weather conditions from the [DarkSky API](https://darksky.net/dev) in the theme header.
 
 ## Demo
 
@@ -79,22 +79,19 @@ export default function Weather() {
 
 // Mount <Weather /> component to <div id="weather">.
 ReactDOM.render(<Weather />, document.getElementById("weather"));
-
 ```
+
 ---
 
 Create a new file named, `postcss.config.js`:
 
 ```js
 module.exports = {
-  plugins: [
-    require("tailwindcss"),
-    require("postcss-preset-env"),
-  ],
+  plugins: [require("tailwindcss"), require("postcss-preset-env")],
 };
 ```
-_PostCSS is what `@wordpress/scripts` will use to turn TailwindCSS into actual CSS._
----
+
+## _PostCSS is what `@wordpress/scripts` will use to turn TailwindCSS into actual CSS._
 
 If you want to use PurgeCSS, create a new file call `tailwind.config.js`:
 
@@ -107,7 +104,6 @@ module.exports = {
   variants: {},
   plugins: [],
 };
-
 ```
 
 Now, bring in the directives from TailwindCSS and basic CSS for demo purposes:
@@ -126,7 +122,6 @@ Now, bring in the directives from TailwindCSS and basic CSS for demo purposes:
   margin: 0 auto 24px;
   max-width: 740px;
 }
-
 ```
 
 ---

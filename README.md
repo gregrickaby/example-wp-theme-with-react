@@ -152,7 +152,8 @@ npm run build
 
 ---
 
-The weather loaded in the header area: 👇 💥
+### The result:
+
 ![screenshot](https://dl.dropbox.com/s/q9jqy32g8tnjimq/kapture%202020-07-21%20at%2013.33.48.gif?dl=0)
 
 ---

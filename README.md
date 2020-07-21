@@ -6,7 +6,7 @@ This repo is a proof of concept using [@wordpress/scripts](https://developer.wor
 
 ## Demo
 
-First, we need to enqueue the styles and scripts (and their depdenencies e.g., React and ReactDom) in `functions.php`:
+First, we need to enqueue the styles, scripts, and their depdenencies e.g., React and ReactDom:
 
 ```php
 /* functions.php */
@@ -81,7 +81,7 @@ export default function Weather() {
 
 ---
 
-Now, style the `<Weather />` component using Sass in `index.scss`:
+Now, style the `<Weather />` component using Sass:
 
 ```scss
 /* src/index.scss */
@@ -103,7 +103,7 @@ Now, style the `<Weather />` component using Sass in `index.scss`:
 
 ---
 
-We're almost there! We need to `@import` both the Sass file `index.scss` and `<Weather />` component into the entry file `index.js`:
+We're almost there! We need to `@import` both the Sass file `index.scss` and `<Weather />` component in the entry file. We also need to use `ReactDom.render()` to mount the `<Weather>` component:
 
 ```js
 /* src/index.js */
@@ -115,7 +115,7 @@ import Weather from "./components/Weather";
 ReactDOM.render(<Weather />, document.getElementById("weather"));
 ```
 
-_The entry file is what `@wordpress/scripts` needs in order to bundle assets. We also need attach the `<Weather />` component to `#weather` using `ReactDom.render()`:_
+_The entry file is what `@wordpress/scripts` needs in order to bundle assets._
 
 ---
 

@@ -31,5 +31,5 @@
 				</div>
 			</div>
 
-			<div id="weather"></div>
+			<div id="weather"></div> <!-- Our <Weather/> component will mount here -->
 		</header><!-- #site-header -->

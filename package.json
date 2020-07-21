@@ -5,9 +5,7 @@
   "private": true,
   "author": "Greg Rickaby",
   "license": "GPL-2.0",
-  "dependencies": {
-    "react-cool-img": "^1.2.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@wordpress/scripts": "^12.1.1"
   },

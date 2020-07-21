@@ -26,7 +26,7 @@ function example_scripts() {
 add_action( 'wp_enqueue_scripts', 'example_scripts' );
 ```
 
-Now let's fetch current weather conditions in Los Angeles, CA using the DarkSky API:
+Now let's fetch current weather conditions in Los Angeles, CA from the DarkSky API:
 
 ```js
 /* src/components/Header.js */
@@ -55,6 +55,7 @@ export default function Weather() {
     fetchData();
   }, []);
 
+  // Return our weather component.
   return (
     <div className="current-weather">
       {loading ? (
@@ -76,7 +77,7 @@ export default function Weather() {
 }
 ```
 
-Style the `<Weater />` component using Sass in `index.scss`:
+Style the `<Weather />` component using Sass in `index.scss`:
 
 ```scss
 /* src/index.scss */
@@ -96,7 +97,7 @@ Style the `<Weater />` component using Sass in `index.scss`:
 }
 ```
 
-Import both the Sass file `index.scss` and `<Weather />` component into the entry file `index.js`. The entry file is what `@wordpress/scripts` needs in order to bundle assets. We also need attach the `<Weather />` component to `#weather` <div> using `ReactDom.render()`:
+Import both the Sass file `index.scss` and `<Weather />` component into the entry file `index.js`. _The entry file is what `@wordpress/scripts` needs in order to bundle assets. We also need attach the `<Weather />` component to `#weather` using `ReactDom.render()`:_
 
 ```js
 /* src/index.js */

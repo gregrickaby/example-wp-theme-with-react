@@ -115,11 +115,11 @@ import Weather from "./components/Weather";
 ReactDOM.render(<Weather />, document.getElementById("weather"));
 ```
 
-_The entry file is what `@wordpress/scripts` needs in order to bundle assets._
+_The entry file is required so that `@wordpress/scripts` knows what to build._
 
 ---
 
-Finally, tell `@wordpress/scripts` to bundle everything up!
+Finally, tell `@wordpress/scripts` to build and bundle everything up!
 
 ```bash
 npm run build

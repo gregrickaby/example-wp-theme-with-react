@@ -21,4 +21,15 @@
 
 	<body <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
-		<header id="site-header" class="header-footer-group" role="banner"></header><!-- #site-header -->
+		<header id="site-header" class="header-footer-group" role="banner">
+			<div class="header">
+				<div class="branding">
+					<h1>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+					</h1>
+					<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+				</div>
+			</div>
+
+			<div id="weather"></div>
+		</header><!-- #site-header -->

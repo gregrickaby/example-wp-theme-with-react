@@ -1,9 +1,9 @@
-import './index.scss';
-import Header from './components/Header';
+import "./index.scss";
+import Weather from "./components/Weather";
 
 ReactDOM.render(
-	<React.StrictMode>
-		<Header />
-	</React.StrictMode>,
-	document.getElementById( 'site-header' )
+  <React.StrictMode>
+    <Weather />
+  </React.StrictMode>,
+  document.getElementById("weather")
 );

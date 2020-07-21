@@ -106,7 +106,7 @@ Now, style the `<Weather />` component using Sass:
 
 ---
 
-We're almost there! We need to `@import` both the Sass file and `<Weather />` component in our entry file.
+We're almost there! We need to `import` both the Sass file and `<Weather />` component in our entry file.
 
 ```js
 /* src/index.js */

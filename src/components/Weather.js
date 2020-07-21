@@ -30,12 +30,12 @@ export default function Weather() {
         <p>Unable to fetch results. Try reloading the page.</p>
       ) : (
         <>
-          <p className="current-location">Los Angeles, CA</p>
-          <p className="current-summary">
+          <p className="font-bold">Los Angeles, CA</p>
+          <p className="text-sm">
             {weather.currently.summary} and{" "}
             {Math.round(weather.currently.temperature)}F
           </p>
-          <p className="daily-summary">{weather.daily.summary}</p>
+          <p className="text-sm">{weather.daily.summary}</p>
         </>
       )}
     </div>

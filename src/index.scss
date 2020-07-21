@@ -2,46 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Weather styles */
-.current-weather {
-  text-align: right;
-
-  p {
-    margin: 0;
-    padding: 0;
-  }
-
-  .current-location {
-    font-size: 18px;
-    font-weight: 700;
-  }
-}
-
-/* SOME BASIC STYLES FOR DEMO PURPOSES. DELETE ME */
-
+/* SOME BASIC GRID STYLES FOR DEMO PURPOSES. DELETE ME */
 #site-header,
 #site-content,
 #site-footer {
   margin: 0 auto 24px;
   max-width: 740px;
-
-  h1 {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-#site-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.branding {
-  display: flex;
-  flex-direction: column;
-}
-
-.hentry {
-  border-bottom: 1px solid #f1f1f1;
-  margin-bottom: 24px;
 }

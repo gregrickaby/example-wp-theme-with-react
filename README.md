@@ -28,7 +28,7 @@ add_action( 'wp_enqueue_scripts', 'example_scripts' );
 
 ---
 
-Next, fetch the current weather conditions in Los Angeles, CA from the DarkSky API:
+Next, fetch the current weather conditions in Los Angeles, CA from the DarkSky API. We also need to use `ReactDom.render()` to mount the `<Weather />` component:
 
 ```js
 /* src/components/Header.js */
@@ -77,6 +77,9 @@ export default function Weather() {
     </div>
   );
 }
+
+// Mount <Weather /> component to <div id="weather">.
+ReactDOM.render(<Weather />, document.getElementById("weather"));
 ```
 
 ---
@@ -103,16 +106,13 @@ Now, style the `<Weather />` component using Sass:
 
 ---
 
-We're almost there! We need to `@import` both the Sass file and `<Weather />` component in our entry file. We also need to use `ReactDom.render()` to mount the `<Weather />` component:
+We're almost there! We need to `@import` both the Sass file and `<Weather />` component in our entry file.
 
 ```js
 /* src/index.js */
 
 import "./index.scss";
 import Weather from "./components/Weather";
-
-// Mount <Weather /> component to <div id="weather">.
-ReactDOM.render(<Weather />, document.getElementById("weather"));
 ```
 
 _The entry file is required so that `@wordpress/scripts` knows what to build._

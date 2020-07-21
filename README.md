@@ -26,7 +26,9 @@ function example_scripts() {
 add_action( 'wp_enqueue_scripts', 'example_scripts' );
 ```
 
-Now let's fetch current weather conditions in Los Angeles, CA from the DarkSky API:
+---
+
+Next, fetch the current weather conditions in Los Angeles, CA from the DarkSky API:
 
 ```js
 /* src/components/Header.js */
@@ -77,7 +79,9 @@ export default function Weather() {
 }
 ```
 
-Style the `<Weather />` component using Sass in `index.scss`:
+---
+
+Now, style the `<Weather />` component using Sass in `index.scss`:
 
 ```scss
 /* src/index.scss */
@@ -97,7 +101,9 @@ Style the `<Weather />` component using Sass in `index.scss`:
 }
 ```
 
-Import both the Sass file `index.scss` and `<Weather />` component into the entry file `index.js`. _The entry file is what `@wordpress/scripts` needs in order to bundle assets. We also need attach the `<Weather />` component to `#weather` using `ReactDom.render()`:_
+---
+
+We're almost there! We need to `@import` both the Sass file `index.scss` and `<Weather />` component into the entry file `index.js`:
 
 ```js
 /* src/index.js */
@@ -109,14 +115,22 @@ import Weather from "./components/Weather";
 ReactDOM.render(<Weather />, document.getElementById("weather"));
 ```
 
-Now tell `@wordpress/scripts` to bundle everything up!
+_The entry file is what `@wordpress/scripts` needs in order to bundle assets. We also need attach the `<Weather />` component to `#weather` using `ReactDom.render()`:_
+
+---
+
+Finally, tell `@wordpress/scripts` to bundle everything up!
 
 ```bash
 npm run build
 ```
 
+---
+
 The weather loaded in the header area: 👇 💥
 ![screenshot](https://dl.dropbox.com/s/xvb1q50lr2b42ah/Screenshot%202020-07-21%2011.52.33.png?dl=0)
+
+---
 
 ### What just happened?
 

@@ -23,7 +23,7 @@ export default function Weather() {
   }, []);
 
   return (
-    <div className="current-weather">
+    <div className="text-right">
       {loading ? (
         <p>Getting weather info...</p>
       ) : typeof weather == "undefined" ? (

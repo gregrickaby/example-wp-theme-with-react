@@ -24,24 +24,20 @@ Now we can build a header area using JSX and use the NPM package [React Cool Img
 ```js
 /* src/components/Header.js */
 
-import React from 'react';
-import Img from 'react-cool-img';
+import React from "react";
+import Img from "react-cool-img";
 
 export default function Header() {
-	return (
-		<div className="header">
-			<Img
-				src="https://picsum.photos/200/75"
-				alt="Logo"
-				className="logo"
-			/>
+  return (
+    <div className="header">
+      <Img src="https://picsum.photos/200/75" alt="Logo" className="logo" />
 
-			<div className="branding">
-				<h1>Site Name</h1>
-				<p>Site Description</p>
-			</div>
-		</div>
-	);
+      <div className="branding">
+        <h1>Site Name</h1>
+        <p>Site Description</p>
+      </div>
+    </div>
+  );
 }
 ```
 
@@ -51,16 +47,16 @@ Style the `<Header />` component using Sass in `index.scss`:
 /* src/index.scss */
 
 .header {
-	display: flex;
+  display: flex;
 
-	.logo {
-		margin-right: 24px;
-	}
+  .logo {
+    margin-right: 24px;
+  }
 
-	.branding {
-		display: flex;
-		flex-direction: column;
-	}
+  .branding {
+    display: flex;
+    flex-direction: column;
+  }
 }
 ```
 
@@ -69,14 +65,14 @@ Import both the Sass file and `<Header />` component into the entry file `index.
 ```js
 /* src/index.js */
 
-import './index.scss';
-import Header from './components/Header';
+import "./index.scss";
+import Header from "./components/Header";
 
 ReactDOM.render(
-	<React.StrictMode>
-		<Header />
-	</React.StrictMode>,
-	document.getElementById('site-header')
+  <React.StrictMode>
+    <Header />
+  </React.StrictMode>,
+  document.getElementById("site-header")
 );
 ```
 

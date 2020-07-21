@@ -111,7 +111,7 @@ We're almost there! We need to `@import` both the Sass file and `<Weather />` co
 import "./index.scss";
 import Weather from "./components/Weather";
 
-// Attach <Weather /> component to <div id="weather">.
+// Mount <Weather /> component to <div id="weather">.
 ReactDOM.render(<Weather />, document.getElementById("weather"));
 ```
 

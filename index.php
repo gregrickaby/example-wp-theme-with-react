@@ -15,29 +15,28 @@
 
 get_header();
 ?>
+	<main id="site-content">
+		<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) :
+					the_post();
+		?>
+			<article class="hentry">
+				<h2>
+					<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+						<?php the_title(); ?>
+					</a>
+				</h2>
 
-	<main id="site-content" role="main">
-	<?php
-		if ( have_posts() ) :
-			while ( have_posts() ) :
-				the_post();
-	?>
+				<div class="entry">
+					<?php the_content(); ?>
+				</div>
+			</article>
 
-		<h2>
-			<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-				<?php the_title(); ?>
-			</a>
-		</h2>
-
-		<div class="entry">
-			<?php the_content(); ?>
-		</div>
-
-	<?php endwhile; else : ?>
-		<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-	<?php endif; ?>
+		<?php endwhile; else : ?>
+			<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+		<?php endif; ?>
 
 	</main><!-- #site-content -->
-
 <?php
 get_footer();

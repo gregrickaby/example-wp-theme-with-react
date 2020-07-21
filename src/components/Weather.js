@@ -41,3 +41,6 @@ export default function Weather() {
     </div>
   );
 }
+
+// Mount <Weather /> component to <div id="weather">.
+ReactDOM.render(<Weather />, document.getElementById("weather"));

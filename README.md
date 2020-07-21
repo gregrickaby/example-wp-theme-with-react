@@ -94,6 +94,8 @@ module.exports = {
 
 _PostCSS is what `@wordpress/scripts` will use to turn TailwindCSS into actual CSS._
 
+---
+
 If you want to use [PurgeCSS](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) to remove unused CSS, create a new file named `tailwind.config.js`:
 
 ```js
@@ -106,6 +108,8 @@ module.exports = {
   plugins: [],
 };
 ```
+
+---
 
 Now, bring in the directives from TailwindCSS and basic CSS for demo purposes:
 

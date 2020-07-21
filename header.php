@@ -21,15 +21,12 @@
 
 	<body <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
-		<header id="site-header" class="header-footer-group" role="banner">
-			<div class="header">
-				<div class="branding">
-					<h1>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					</h1>
-					<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-				</div>
+		<header id="site-header" class="flex justify-between" role="banner">
+			<div class="flex flex-col">
+				<h1 class="font-bold text-3xl">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				</h1>
+				<div><?php bloginfo( 'description' ); ?></div>
 			</div>
-
 			<div id="weather"></div> <!-- Our <Weather/> component will mount here -->
 		</header><!-- #site-header -->

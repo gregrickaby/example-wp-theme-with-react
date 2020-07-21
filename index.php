@@ -21,8 +21,8 @@ get_header();
 				while ( have_posts() ) :
 					the_post();
 		?>
-			<article class="hentry">
-				<h2>
+			<article class="hentry pb-4 mb-8 border-b-2">
+				<h2 class="font-bold text-2xl mb-2">
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
 						<?php the_title(); ?>
 					</a>

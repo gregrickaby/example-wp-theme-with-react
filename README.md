@@ -103,7 +103,7 @@ Now, style the `<Weather />` component using Sass:
 
 ---
 
-We're almost there! We need to `@import` both the Sass file `index.scss` and `<Weather />` component in the entry file. We also need to use `ReactDom.render()` to mount the `<Weather>` component:
+We're almost there! We need to `@import` both the Sass file `index.scss` and `<Weather />` component in the entry file. We also need to use `ReactDom.render()` to mount the `<Weather />` component:
 
 ```js
 /* src/index.js */

@@ -57,6 +57,7 @@ export default function Weather() {
     fetchData();
   }, []);
 
+  // Display the <Weather /> component.
   return (
     <div className="text-right">
       {loading ? (
@@ -83,7 +84,7 @@ ReactDOM.render(<Weather />, document.getElementById("weather"));
 
 ---
 
-Create a new file named, `postcss.config.js`:
+Now it's time to setup TailwindCSS. Create a new file named, `postcss.config.js`:
 
 ```js
 module.exports = {
@@ -93,11 +94,11 @@ module.exports = {
 
 ## _PostCSS is what `@wordpress/scripts` will use to turn TailwindCSS into actual CSS._
 
-If you want to use PurgeCSS, create a new file call `tailwind.config.js`:
+If you want to use [PurgeCSS](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) to remove unused CSS, create a new file named `tailwind.config.js`:
 
 ```js
 module.exports = {
-  purge: ["./src/components/*.js"],
+  purge: ["./src/components/*.js"], // This will purge unused CSS.
   theme: {
     extend: {},
   },

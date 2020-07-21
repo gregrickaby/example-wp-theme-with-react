@@ -22,6 +22,7 @@ export default function Weather() {
     fetchData();
   }, []);
 
+  // Display the <Weather /> component.
   return (
     <div className="text-right">
       {loading ? (

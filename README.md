@@ -26,61 +26,86 @@ function example_scripts() {
 add_action( 'wp_enqueue_scripts', 'example_scripts' );
 ```
 
-Now we can build a header area using JSX and use the NPM package [React Cool Img](https://github.com/wellyshen/react-cool-img) to load in our logo. _Note: React Cool Img is not required, but I wanted to show you how can use ES6 imports to bring in other packages_
+Now let's fetch current weather conditions in Los Angeles, CA using the DarkSky API:
 
 ```js
 /* src/components/Header.js */
 
-import React from "react";
-import Img from "react-cool-img";
+import React, { useState, useEffect } from "react";
 
-export default function Header() {
+// Use CORS anywhere to bypass CORS issues.
+const CORS_PROXY = `https://cors-anywhere.herokuapp.com/`;
+
+// Set weather API URL.
+const WEATHER_API = `https://api.darksky.net/forecast/62627807ae3841ba587c80d49b90759b/37.8267,-122.4233`;
+
+export default function Weather() {
+  // Set initial state.
+  const [loading, setLoading] = useState(true);
+  const [weather, setWeather] = useState();
+
+  // Fetch weather data.
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(CORS_PROXY + WEATHER_API);
+      const data = await response.json();
+      setWeather(data);
+      setLoading(false);
+    }
+    fetchData();
+  }, []);
+
   return (
-    <div className="header">
-      <Img src="https://picsum.photos/200/75" alt="Logo" className="logo" />
-
-      <div className="branding">
-        <h1>Site Name</h1>
-        <p>Site Description</p>
-      </div>
+    <div className="current-weather">
+      {loading ? (
+        <p>Getting weather info...</p>
+      ) : typeof weather == "undefined" ? (
+        <p>Unable to fetch results. Try reloading the page.</p>
+      ) : (
+        <>
+          <p className="current-location">Los Angeles, CA</p>
+          <p className="current-summary">
+            {weather.currently.summary} and{" "}
+            {Math.round(weather.currently.temperature)}F
+          </p>
+          <p className="daily-summary">{weather.daily.summary}</p>
+        </>
+      )}
     </div>
   );
 }
 ```
 
-Style the `<Header />` component using Sass in `index.scss`:
+Style the `<Weater />` component using Sass in `index.scss`:
 
 ```scss
 /* src/index.scss */
 
-.header {
-  display: flex;
+.current-weather {
+  text-align: right;
 
-  .logo {
-    margin-right: 24px;
+  p {
+    margin: 0;
+    padding: 0;
   }
 
-  .branding {
-    display: flex;
-    flex-direction: column;
+  .current-location {
+    font-size: 18px;
+    font-weight: 700;
   }
 }
 ```
 
-Import both the Sass file and `<Header />` component into the entry file `index.js`. The entry file is what @wordpress/scripts needs in order to bundle. We also need attach the `<Header />` component to `#site-header` div using `ReactDom.render()`:
+Import both the Sass file `index.scss` and `<Weather />` component into the entry file `index.js`. The entry file is what @wordpress/scripts needs in order to bundle. We also need attach the `<Weather />` component to `#weather` <div> using `ReactDom.render()`:
 
 ```js
 /* src/index.js */
 
 import "./index.scss";
-import Header from "./components/Header";
+import Weather from "./components/Weather";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Header />
-  </React.StrictMode>,
-  document.getElementById("site-header")
-);
+// Attach <Weather /> component to <div id="weather">.
+ReactDOM.render(<Weather />, document.getElementById("weather"));
 ```
 
 Now tell @wordpress/scripts to bundle everything up!
@@ -89,9 +114,8 @@ Now tell @wordpress/scripts to bundle everything up!
 npm run build
 ```
 
-The finished header 👇 💥
-
-![screenshot](https://dl.dropbox.com/s/jseox2sxbk84fko/Screenshot%202020-07-15%2014.57.27.png?dl=0)
+The weather loaded in the header area: 👇 💥
+![screenshot](https://dl.dropbox.com/s/xvb1q50lr2b42ah/Screenshot%202020-07-21%2011.52.33.png?dl=0)
 
 ### What just happened?
 
@@ -120,7 +144,7 @@ Activate the theme in WordPress.
 To start HMR:
 
 ```bash
-npm run dev
+npm run start
 ```
 
 To lint scripts and styles:

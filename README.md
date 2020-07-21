@@ -2,7 +2,7 @@
 
 Have you ever wanted to use a traditional WordPress theme, but add dynamic user interfaces to the front-end? Maybe there's an NPM package that you want to use, but you're not sure how to import and bundle it?
 
-This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to bundle theme assets and load in the current weather conditions using the DarkSky API in the theme header.
+This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to bundle theme assets, and load the current weather conditions from the DarkSky API in the theme header.
 
 ## Demo
 

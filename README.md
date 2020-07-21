@@ -2,7 +2,7 @@
 
 Have you ever wanted to use a traditional WordPress theme, but add dynamic user interfaces to the front-end? Maybe there's an NPM package that you want to use, but you're not sure how to import and bundle it?
 
-This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to bundle theme assets, and load the current weather conditions from the DarkSky API in the theme header.
+This repo is a proof of concept using [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) to bundle theme assets, use [TailwindCSS](https://tailwindcss.com/) for styles, and load the current weather conditions from the DarkSky API in the theme header.
 
 ## Demo
 
@@ -28,7 +28,7 @@ add_action( 'wp_enqueue_scripts', 'example_scripts' );
 
 ---
 
-Next, fetch the current weather conditions in Los Angeles, CA from the DarkSky API. We also need to use `ReactDom.render()` to mount the `<Weather />` component:
+Next, fetch the current weather conditions in Los Angeles, CA from the DarkSky API. We'll sprinkle in some presentational classes from TailwindCSS. We also need to use `ReactDom.render()` to mount the `<Weather />` component:
 
 ```js
 /* src/components/Header.js */
@@ -57,21 +57,20 @@ export default function Weather() {
     fetchData();
   }, []);
 
-  // Return our weather component.
   return (
-    <div className="current-weather">
+    <div className="text-right">
       {loading ? (
         <p>Getting weather info...</p>
       ) : typeof weather == "undefined" ? (
         <p>Unable to fetch results. Try reloading the page.</p>
       ) : (
         <>
-          <p className="current-location">Los Angeles, CA</p>
-          <p className="current-summary">
+          <p className="font-bold">Los Angeles, CA</p>
+          <p className="text-sm">
             {weather.currently.summary} and{" "}
             {Math.round(weather.currently.temperature)}F
           </p>
-          <p className="daily-summary">{weather.daily.summary}</p>
+          <p className="text-sm">{weather.daily.summary}</p>
         </>
       )}
     </div>
@@ -80,28 +79,54 @@ export default function Weather() {
 
 // Mount <Weather /> component to <div id="weather">.
 ReactDOM.render(<Weather />, document.getElementById("weather"));
-```
 
+```
 ---
 
-Now, style the `<Weather />` component using Sass:
+Create a new file named, `postcss.config.js`:
+
+```js
+module.exports = {
+  plugins: [
+    require("tailwindcss"),
+    require("postcss-preset-env"),
+  ],
+};
+```
+_PostCSS is what `@wordpress/scripts` will use to turn TailwindCSS into actual CSS._
+---
+
+If you want to use PurgeCSS, create a new file call `tailwind.config.js`:
+
+```js
+module.exports = {
+  purge: ["./src/components/*.js"],
+  theme: {
+    extend: {},
+  },
+  variants: {},
+  plugins: [],
+};
+
+```
+
+Now, bring in the directives from TailwindCSS and basic CSS for demo purposes:
 
 ```scss
 /* src/index.scss */
 
-.current-weather {
-  text-align: right;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  p {
-    margin: 0;
-    padding: 0;
-  }
-
-  .current-location {
-    font-size: 18px;
-    font-weight: 700;
-  }
+/* BASIC GRID STYLE FOR DEMO PURPOSES. */
+#site-header,
+#site-content,
+#site-footer {
+  margin: 0 auto 24px;
+  max-width: 740px;
 }
+
 ```
 
 ---
@@ -128,7 +153,7 @@ npm run build
 ---
 
 The weather loaded in the header area: 👇 💥
-![screenshot](https://dl.dropbox.com/s/xvb1q50lr2b42ah/Screenshot%202020-07-21%2011.52.33.png?dl=0)
+![screenshot](https://dl.dropbox.com/s/q9jqy32g8tnjimq/kapture%202020-07-21%20at%2013.33.48.gif?dl=0)
 
 ---
 

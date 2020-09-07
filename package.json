@@ -6,7 +6,7 @@
   "author": "Greg Rickaby",
   "license": "GPL-2.0",
   "dependencies": {
-    "tailwindcss": "^1.6.2"
+    "tailwindcss": "^1.8.4"
   },
   "devDependencies": {
     "@wordpress/scripts": "^12.1.1",
